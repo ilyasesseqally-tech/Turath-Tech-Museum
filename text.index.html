@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turath-Tech: Digital Museum</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* تنسيق الشعار وعناصر الرأس */
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-img {
+            max-width: 150px; /* التحكم في حجم الشعار */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #2ecc71;
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: #aaaaaa;
+            margin: 5px 0 0;
+            font-size: 1rem;
+        }
+
+        /* تنسيق المجسم */
+        model-viewer {
+            width: 90%;
+            max-width: 800px;
+            height: 500px;
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.1);
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <img src="logo.png" alt="Turath-Tech Logo" class="logo-img">
+        <h1>TURATH-TECH MUSEUM</h1>
+        <p>Heritage in 3D: A View from Future Innovators</p>
+    </div>
+
+    <model-viewer 
+        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+        alt="A 3D model of an Artifact" 
+        auto-rotate 
+        camera-controls 
+        shadow-intensity="1">
+    </model-viewer>
+
+</body>
+</html>
