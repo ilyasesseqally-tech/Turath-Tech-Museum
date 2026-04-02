@@ -3,81 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turath-Tech: Digital Museum</title>
+    <title>Turath-Tech: Mobile Gallery</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     
     <style>
+        /* التصميم الأساسي المخصص للهواتف */
         body {
             background-color: #121212;
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            text-align: center;
-            padding: 20px;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-        }
-
-        /* تنسيق الشعار وعناصر الرأس */
-        .header-container {
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 40px;
         }
 
-        .logo-img {
-            max-width: 150px; /* التحكم في حجم الشعار */
-            height: auto;
-            margin-bottom: 10px;
+        /* تنسيق الرأس والشعار */
+        .header { text-align: center; margin-bottom: 30px; margin-top: 10px; }
+        .logo-img { max-width: 100px; margin-bottom: 10px; }
+        h1 { color: #2ecc71; font-size: 1.8rem; margin: 0; }
+        .subtitle { color: #888; font-size: 0.9rem; margin-top: 5px; }
+
+        /* حاوية المجسمات (Cards) */
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* المسافة بين كل مجسم وآخر */
+            width: 100%;
+            max-width: 500px; /* حجم مثالي لشاشات الهواتف */
         }
 
-        h1 {
+        /* تصميم البطاقة الخاصة بكل مجسم */
+        .artifact-card {
+            background-color: #1e1e1e;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid #333;
+        }
+
+        /* عنوان المجسم */
+        .artifact-card h2 {
             color: #2ecc71;
-            margin: 0;
-            font-size: 2rem;
-            letter-spacing: 1px;
+            font-size: 1.3rem;
+            margin: 0 0 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
         }
 
-        p {
-            color: #aaaaaa;
-            margin: 5px 0 0;
+        /* شاشة عرض المجسم */
+        model-viewer {
+            width: 100%;
+            height: 280px;
+            background-color: #121212;
+            border-radius: 12px;
+            outline: none;
+        }
+
+        /* --- تصميم القائمة المنسدلة للنصوص (السحر هنا) --- */
+        details {
+            margin-top: 15px;
+            background-color: #252525;
+            border-radius: 10px;
+            padding: 10px 15px;
+        }
+
+        summary {
+            color: #2ecc71;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
             font-size: 1rem;
         }
+        
+        /* إزالة السهم الافتراضي في بعض المتصفحات وتحسين شكله */
+        summary::marker { color: #fff; }
 
-        /* تنسيق المجسم */
-        model-viewer {
-            width: 90%;
-            max-width: 800px;
-            height: 500px;
-            background-color: #1e1e1e;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.1);
-            margin: 0 auto;
+        .desc-text {
+            color: #cccccc;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 10px;
+            text-align: justify;
         }
     </style>
 </head>
 <body>
 
-    <div class="header-container">
+    <div class="header">
         <img src="logo.png" alt="Turath-Tech Logo" class="logo-img">
-        <h1>TURATH-TECH MUSEUM</h1>
-        <p>Heritage in 3D: A View from Future Innovators</p>
+        <h1>TURATH-TECH</h1>
+        <p class="subtitle">Swipe to explore our 3D Heritage</p>
     </div>
 
-    <model-viewer 
-        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
-        alt="A 3D model of an Artifact" 
-        auto-rotate 
-        camera-controls 
-        shadow-intensity="1">
-    </model-viewer>
-   
+    <div class="gallery-container">
 
-    <model-viewer 
-        src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" 
-        alt="A 3D model of a robot" 
-        auto-rotate camera-controls shadow-intensity="1"
-        style="margin-top: 20px;">
-    </model-viewer>
+        <div class="artifact-card">
+            <h2>The Explorer</h2>
+            <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+            <details>
+                <summary>Discover History</summary>
+                <p class="desc-text">This model represents the future of exploration. For Turath-Tech, it symbolizes our journey to explore and digitize hidden heritage artifacts using advanced robotics and AI.</p>
+            </details>
+        </div>
+
+        <div class="artifact-card">
+            <h2>Damaged Artifact</h2>
+            <model-viewer src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF-Binary/DamagedHelmet.glb" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+            <details>
+                <summary>Discover History</summary>
+                <p class="desc-text">An example of a historical artifact that has suffered damage over time. Our 3D scanning process safely preserves its exact digital twin for future generations without touching the fragile original piece.</p>
+            </details>
+        </div>
+
+        <div class="artifact-card">
+            <h2>Traditional Craft</h2>
+            <model-viewer src="https://modelviewer.dev/shared-assets/models/Shoe.glb" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+            <details>
+                <summary>Discover History</summary>
+                <p class="desc-text">Representing traditional clothing and craftsmanship. Digitizing such items helps historians analyze textures, materials, and techniques used by ancient artisans.</p>
+            </details>
+        </div>
+
+        <div class="artifact-card">
+            <h2>Scanning Automaton</h2>
+            <model-viewer src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+            <details>
+                <summary>Discover History</summary>
+                <p class="desc-text">A representation of the automated mechanical systems we use. By combining Arduino, precise motors, and Python, we remove human error from the 3D photogrammetry process.</p>
+            </details>
+        </div>
+
+    </div>
 
 </body>
 </html>
