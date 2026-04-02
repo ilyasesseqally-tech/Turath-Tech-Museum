@@ -7,10 +7,9 @@
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     
     <style>
-        /* التصميم الأساسي */
         body {
             background-color: #121212; color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0; padding: 15px;
             display: flex; flex-direction: column; align-items: center;
         }
@@ -40,7 +39,6 @@
             border-radius: 12px; outline: none;
         }
 
-        /* --- تصميم القائمة المنسدلة --- */
         details {
             margin-top: 15px; background-color: #252525;
             border-radius: 10px; padding: 10px 15px;
@@ -50,9 +48,7 @@
             color: #2ecc71; font-weight: bold; cursor: pointer;
             outline: none; font-size: 1rem; display: flex; align-items: center;
         }
-        summary::marker { color: #fff; }
 
-        /* --- تصميم قائمة اختيار اللغات --- */
         .lang-menu {
             display: flex; justify-content: center; gap: 10px;
             margin: 15px 0 10px 0; padding-bottom: 10px;
@@ -70,16 +66,13 @@
             border-color: #2ecc71; color: #2ecc71; background-color: rgba(46, 204, 113, 0.1);
         }
 
-        /* تنسيق النصوص */
         .desc-text {
             color: #cccccc; font-size: 0.95rem; line-height: 1.6;
-            margin-top: 10px; display: none; /* إخفاء كل النصوص افتراضياً */
+            margin-top: 10px; display: none;
             animation: fadeIn 0.5s;
         }
 
-        /* تنسيق النص العربي */
-        .desc-text.ar { text-align: right; font-family: Arial, sans-serif; }
-        .desc-text.en, .desc-text.fr { text-align: left; }
+        .desc-text.ar { text-align: right; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
@@ -98,53 +91,47 @@
             <h2>The Explorer</h2>
             <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
             <details>
-                <summary>📖 Description</summary>
-                
+                <summary>📖 Description / الشرح</summary>
                 <div class="lang-menu">
                     <button class="lang-btn active" onclick="switchLang('art1', 'en', this)">EN</button>
                     <button class="lang-btn" onclick="switchLang('art1', 'fr', this)">FR</button>
                     <button class="lang-btn" onclick="switchLang('art1', 'ar', this)">عربي</button>
                 </div>
-
-                <div id="art1-en" class="desc-text en" style="display: block;">This model represents the future of exploration. For Turath-Tech, it symbolizes our journey to explore and digitize hidden heritage artifacts using advanced robotics.</div>
-                <div id="art1-fr" class="desc-text fr">Ce modèle représente l'avenir de l'exploration. Pour Turath-Tech, il symbolise notre voyage pour explorer et numériser des artefacts patrimoniaux cachés à l'aide de la robotique.</div>
-                <div id="art1-ar" class="desc-text ar" dir="rtl">هذا المجسم يمثل مستقبل الاستكشاف. بالنسبة لفريقنا، هو رمز لرحلتنا في البحث عن التراث المنسي ورقمنته باستخدام تقنيات الروبوتيك الحديثة.</div>
+                <div id="art1-en" class="desc-text en" style="display: block;">This model represents the future of exploration and digitization.</div>
+                <div id="art1-fr" class="desc-text fr">Ce modèle représente l'avenir de l'exploration et de la numérisation.</div>
+                <div id="art1-ar" class="desc-text ar" dir="rtl">هذا المجسم يمثل مستقبل الاستكشاف والرقمنة التي يسعى فريقنا لتحقيقها.</div>
             </details>
         </div>
 
         <div class="artifact-card">
-            <h2>Heritage Sample A</h2>
-            <model-viewer src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/Duck/glTF-Binary/Duck.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
+            <h2>Heritage Lantern</h2>
+            <model-viewer src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/Lantern/glTF-Binary/Lantern.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
             <details>
-                <summary>📖 Description</summary>
-                
+                <summary>📖 Description / الشرح</summary>
                 <div class="lang-menu">
                     <button class="lang-btn active" onclick="switchLang('art2', 'en', this)">EN</button>
                     <button class="lang-btn" onclick="switchLang('art2', 'fr', this)">FR</button>
                     <button class="lang-btn" onclick="switchLang('art2', 'ar', this)">عربي</button>
                 </div>
-
-                <div id="art2-en" class="desc-text en" style="display: block;">A lightweight testing model. In the final version, this will be replaced by a scanned Moroccan pottery piece from our 3D scanner.</div>
-                <div id="art2-fr" class="desc-text fr">Un modèle de test léger. Dans la version finale, il sera remplacé par une poterie marocaine numérisée par notre scanner 3D.</div>
-                <div id="art2-ar" class="desc-text ar" dir="rtl">مجسم اختباري. في النسخة النهائية للمسابقة، سيتم استبداله بقطعة فخار مغربية أصلية تم عمل مسح ثلاثي الأبعاد لها بواسطة الروبوت الخاص بنا.</div>
+                <div id="art2-en" class="desc-text en" style="display: block;">A traditional lantern, symbolizing the light of heritage we aim to preserve.</div>
+                <div id="art2-fr" class="desc-text fr">Une lanterne traditionnelle, symbolisant la lumière du patrimoine que nous visons à préserver.</div>
+                <div id="art2-ar" class="desc-text ar" dir="rtl">فانوس تقليدي يرمز لنور التراث الذي نهدف للحفاظ عليه ونقله للأجيال القادمة عبر التقنية.</div>
             </details>
         </div>
 
         <div class="artifact-card">
-            <h2>Ancient Artifact</h2>
-            <model-viewer src="https://modelviewer.dev/shared-assets/models/Canoe.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
+            <h2>Royal Artifact</h2>
+            <model-viewer src="https://modelviewer.dev/shared-assets/models/Chair.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
             <details>
-                <summary>📖 Description</summary>
-                
+                <summary>📖 Description / الشرح</summary>
                 <div class="lang-menu">
                     <button class="lang-btn active" onclick="switchLang('art3', 'en', this)">EN</button>
                     <button class="lang-btn" onclick="switchLang('art3', 'fr', this)">FR</button>
                     <button class="lang-btn" onclick="switchLang('art3', 'ar', this)">عربي</button>
                 </div>
-
-                <div id="art3-en" class="desc-text en" style="display: block;">This represents maritime heritage. 3D digitization allows us to study the structure of ancient artifacts without damaging them.</div>
-                <div id="art3-fr" class="desc-text fr">Cela représente le patrimoine maritime. La numérisation 3D nous permet d'étudier la structure des artefacts anciens sans les endommager.</div>
-                <div id="art3-ar" class="desc-text ar" dir="rtl">يمثل التراث القديم. الرقمنة الثلاثية الأبعاد تتيح لنا وللباحثين دراسة هيكل القطع الأثرية الهشة بدقة عالية دون تعريضها لخطر التلف أو اللمس.</div>
+                <div id="art3-en" class="desc-text en" style="display: block;">A 3D scan of a historical chair, showing intricate wood details.</div>
+                <div id="art3-fr" class="desc-text fr">Un scan 3D d'une chaise historique, montrant les détails complexes du bois.</div>
+                <div id="art3-ar" class="desc-text ar" dir="rtl">مسح ثلاثي الأبعاد لكرسي تاريخي، يوضح التفاصيل الدقيقة للخشب والنقوش التي تم حفظها رقمياً.</div>
             </details>
         </div>
 
@@ -152,17 +139,15 @@
             <h2>Scanning System</h2>
             <model-viewer src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
             <details>
-                <summary>📖 Description</summary>
-                
+                <summary>📖 Description / الشرح</summary>
                 <div class="lang-menu">
                     <button class="lang-btn active" onclick="switchLang('art4', 'en', this)">EN</button>
                     <button class="lang-btn" onclick="switchLang('art4', 'fr', this)">FR</button>
                     <button class="lang-btn" onclick="switchLang('art4', 'ar', this)">عربي</button>
                 </div>
-
-                <div id="art4-en" class="desc-text en" style="display: block;">Our robotic system's digital twin. It shows how the mechanical components move to capture every angle automatically.</div>
-                <div id="art4-fr" class="desc-text fr">Le jumeau numérique de notre système robotique. Il montre comment les composants mécaniques bougent pour capturer chaque angle.</div>
-                <div id="art4-ar" class="desc-text ar" dir="rtl">النسخة الرقمية لنظامنا الآلي. يوضح كيف تتحرك القطع الميكانيكية بدقة متناهية لالتقاط الصور من كل الزوايا بشكل أوتوماتيكي ومستقل.</div>
+                <div id="art4-en" class="desc-text en" style="display: block;">Our autonomous robotic arm designed for 360-degree heritage capture.</div>
+                <div id="art4-fr" class="desc-text fr">Notre bras robotisé autonome conçu pour la capture du patrimoine à 360 degrés.</div>
+                <div id="art4-ar" class="desc-text ar" dir="rtl">ذراعنا الآلية المستقلة المصممة لالتقاط صور التراث بزاوية 360 درجة بدقة متناهية.</div>
             </details>
         </div>
 
@@ -170,25 +155,14 @@
 
     <script>
         function switchLang(artifactId, lang, btnElement) {
-            // 1. إخفاء كل اللغات لهذا المجسم المحدد
             document.getElementById(artifactId + '-en').style.display = 'none';
             document.getElementById(artifactId + '-fr').style.display = 'none';
             document.getElementById(artifactId + '-ar').style.display = 'none';
-
-            // 2. إظهار اللغة المطلوبة فقط
             document.getElementById(artifactId + '-' + lang).style.display = 'block';
-
-            // 3. إزالة اللون الأخضر عن كل الأزرار
-            let menu = btnElement.parentElement;
-            let buttons = menu.getElementsByClassName('lang-btn');
-            for(let i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
-            }
-
-            // 4. تفعيل اللون الأخضر للزر الذي تم الضغط عليه
+            let buttons = btnElement.parentElement.getElementsByClassName('lang-btn');
+            for(let b of buttons) { b.classList.remove('active'); }
             btnElement.classList.add('active');
         }
     </script>
-
 </body>
 </html>
