@@ -46,7 +46,7 @@
 
         summary {
             color: #2ecc71; font-weight: bold; cursor: pointer;
-            outline: none; font-size: 1rem; display: flex; align-items: center;
+            outline: none; font-size: 1rem;
         }
 
         .lang-menu {
@@ -57,19 +57,16 @@
 
         .lang-btn {
             background: transparent; border: 1px solid #555;
-            color: #aaaaaa; padding: 6px 15px;
+            color: #aaaaaa; padding: 6px 12px;
             border-radius: 20px; cursor: pointer;
-            font-size: 0.85rem; transition: 0.3s; font-weight: bold;
+            font-size: 0.8rem; transition: 0.3s; font-weight: bold;
         }
 
-        .lang-btn.active, .lang-btn:hover {
-            border-color: #2ecc71; color: #2ecc71; background-color: rgba(46, 204, 113, 0.1);
-        }
+        .lang-btn.active { border-color: #2ecc71; color: #2ecc71; background: rgba(46, 204, 113, 0.1); }
 
         .desc-text {
             color: #cccccc; font-size: 0.95rem; line-height: 1.6;
-            margin-top: 10px; display: none;
-            animation: fadeIn 0.5s;
+            margin-top: 10px; display: none; animation: fadeIn 0.4s;
         }
 
         .desc-text.ar { text-align: right; }
@@ -91,47 +88,47 @@
             <h2>The Explorer</h2>
             <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
             <details>
-                <summary>📖 Description / الشرح</summary>
+                <summary>📖 Description</summary>
                 <div class="lang-menu">
                     <button class="lang-btn active" onclick="switchLang('art1', 'en', this)">EN</button>
                     <button class="lang-btn" onclick="switchLang('art1', 'fr', this)">FR</button>
                     <button class="lang-btn" onclick="switchLang('art1', 'ar', this)">عربي</button>
                 </div>
-                <div id="art1-en" class="desc-text en" style="display: block;">This model represents the future of exploration and digitization.</div>
-                <div id="art1-fr" class="desc-text fr">Ce modèle représente l'avenir de l'exploration et de la numérisation.</div>
-                <div id="art1-ar" class="desc-text ar" dir="rtl">هذا المجسم يمثل مستقبل الاستكشاف والرقمنة التي يسعى فريقنا لتحقيقها.</div>
+                <div id="art1-en" class="desc-text en" style="display: block;">Future of heritage exploration.</div>
+                <div id="art1-fr" class="desc-text fr">L'avenir de l'exploration du patrimoine.</div>
+                <div id="art1-ar" class="desc-text ar" dir="rtl">مستقبل استكشاف التراث ورقمنته.</div>
             </details>
         </div>
 
         <div class="artifact-card">
-            <h2>Heritage Lantern</h2>
-            <model-viewer src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/Lantern/glTF-Binary/Lantern.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
+            <h2>Heritage Sample</h2>
+            <model-viewer src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Assets/Models/MaterialsVariantsShoe/glTF-Binary/MaterialsVariantsShoe.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
             <details>
-                <summary>📖 Description / الشرح</summary>
+                <summary>📖 Description</summary>
                 <div class="lang-menu">
                     <button class="lang-btn active" onclick="switchLang('art2', 'en', this)">EN</button>
                     <button class="lang-btn" onclick="switchLang('art2', 'fr', this)">FR</button>
                     <button class="lang-btn" onclick="switchLang('art2', 'ar', this)">عربي</button>
                 </div>
-                <div id="art2-en" class="desc-text en" style="display: block;">A traditional lantern, symbolizing the light of heritage we aim to preserve.</div>
-                <div id="art2-fr" class="desc-text fr">Une lanterne traditionnelle, symbolisant la lumière du patrimoine que nous visons à préserver.</div>
-                <div id="art2-ar" class="desc-text ar" dir="rtl">فانوس تقليدي يرمز لنور التراث الذي نهدف للحفاظ عليه ونقله للأجيال القادمة عبر التقنية.</div>
+                <div id="art2-en" class="desc-text en" style="display: block;">A stable 3D model representing crafted artifacts.</div>
+                <div id="art2-fr" class="desc-text fr">Un modèle 3D stable représentant des artefacts artisanaux.</div>
+                <div id="art2-ar" class="desc-text ar" dir="rtl">نموذج ثلاثي أبعاد ثابت يمثل القطع اليدوية التقليدية.</div>
             </details>
         </div>
 
         <div class="artifact-card">
-            <h2>Royal Artifact</h2>
-            <model-viewer src="https://modelviewer.dev/shared-assets/models/Chair.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
+            <h2>Ancient Artifact</h2>
+            <model-viewer src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Assets/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
             <details>
-                <summary>📖 Description / الشرح</summary>
+                <summary>📖 Description</summary>
                 <div class="lang-menu">
                     <button class="lang-btn active" onclick="switchLang('art3', 'en', this)">EN</button>
                     <button class="lang-btn" onclick="switchLang('art3', 'fr', this)">FR</button>
                     <button class="lang-btn" onclick="switchLang('art3', 'ar', this)">عربي</button>
                 </div>
-                <div id="art3-en" class="desc-text en" style="display: block;">A 3D scan of a historical chair, showing intricate wood details.</div>
-                <div id="art3-fr" class="desc-text fr">Un scan 3D d'une chaise historique, montrant les détails complexes du bois.</div>
-                <div id="art3-ar" class="desc-text ar" dir="rtl">مسح ثلاثي الأبعاد لكرسي تاريخي، يوضح التفاصيل الدقيقة للخشب والنقوش التي تم حفظها رقمياً.</div>
+                <div id="art3-en" class="desc-text en" style="display: block;">Preserving digital twins of fragile items.</div>
+                <div id="art3-fr" class="desc-text fr">Préservation des jumeaux numériques d'objets fragiles.</div>
+                <div id="art3-ar" class="desc-text ar" dir="rtl">حفظ النسخ الرقمية للقطع الأثرية الهشة والقديمة.</div>
             </details>
         </div>
 
@@ -139,29 +136,29 @@
             <h2>Scanning System</h2>
             <model-viewer src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" auto-rotate camera-controls shadow-intensity="1" loading="eager"></model-viewer>
             <details>
-                <summary>📖 Description / الشرح</summary>
+                <summary>📖 Description</summary>
                 <div class="lang-menu">
                     <button class="lang-btn active" onclick="switchLang('art4', 'en', this)">EN</button>
                     <button class="lang-btn" onclick="switchLang('art4', 'fr', this)">FR</button>
                     <button class="lang-btn" onclick="switchLang('art4', 'ar', this)">عربي</button>
                 </div>
-                <div id="art4-en" class="desc-text en" style="display: block;">Our autonomous robotic arm designed for 360-degree heritage capture.</div>
-                <div id="art4-fr" class="desc-text fr">Notre bras robotisé autonome conçu pour la capture du patrimoine à 360 degrés.</div>
-                <div id="art4-ar" class="desc-text ar" dir="rtl">ذراعنا الآلية المستقلة المصممة لالتقاط صور التراث بزاوية 360 درجة بدقة متناهية.</div>
+                <div id="art4-en" class="desc-text en" style="display: block;">Autonomous system for 360-degree capture.</div>
+                <div id="art4-fr" class="desc-text fr">Système autonome pour la capture à 360 degrés.</div>
+                <div id="art4-ar" class="desc-text ar" dir="rtl">نظام آلي مستقل لالتقاط الصور بزاوية 360 درجة.</div>
             </details>
         </div>
 
     </div>
 
     <script>
-        function switchLang(artifactId, lang, btnElement) {
-            document.getElementById(artifactId + '-en').style.display = 'none';
-            document.getElementById(artifactId + '-fr').style.display = 'none';
-            document.getElementById(artifactId + '-ar').style.display = 'none';
-            document.getElementById(artifactId + '-' + lang).style.display = 'block';
-            let buttons = btnElement.parentElement.getElementsByClassName('lang-btn');
-            for(let b of buttons) { b.classList.remove('active'); }
-            btnElement.classList.add('active');
+        function switchLang(artId, lang, btn) {
+            document.getElementById(artId + '-en').style.display = 'none';
+            document.getElementById(artId + '-fr').style.display = 'none';
+            document.getElementById(artId + '-ar').style.display = 'none';
+            document.getElementById(artId + '-' + lang).style.display = 'block';
+            let btns = btn.parentElement.getElementsByClassName('lang-btn');
+            for(let b of btns) b.classList.remove('active');
+            btn.classList.add('active');
         }
     </script>
 </body>
